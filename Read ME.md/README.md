@@ -14,13 +14,3 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 
 ### Setup Steps
 
-1. GitHub repo
-    1. Copy the template repository
-    1. Setup Netlify
-    1. Clone local
-    1. Make dev branch, make sure to push this branch to github
-    1. You will create a feature branch off dev for the days work
-    1. Work in VS Code as usual
-1. Supabase
-
-    1. From "settings > api", copy URL and Key into `fetch-utils.js`
