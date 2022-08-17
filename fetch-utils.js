@@ -66,7 +66,7 @@ export async function getPost(id) {
 }
 
 
-// delete ****************************************************
+// delete this is good right?****************************************************
 export async function deletePost(id) {
     return await client.from('posts').delete().match({ id });
 }

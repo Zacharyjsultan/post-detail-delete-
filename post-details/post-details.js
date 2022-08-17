@@ -1,5 +1,5 @@
 
-import { getPost, checkAuth } from '../fetch-utils.js';
+import { getPost, checkAuth, deletePost } from '../fetch-utils.js';
 
 
 const postDetailContainer = document.querySelector('.post-detail-container');
@@ -31,18 +31,21 @@ async function loadData(){
     
     // if add delete function
 
-    if (user === )
-     const deletePost = document.createElement('button');
-    deletePost.addEventListener('click', async () => {
+    if (user.id === post.user_id) {
+        const
+    }
+     const deleteButton = document.createElement('button');
+    deleteButton.addEventListener('click', async () => {
         await deletePost(post.id);
     });
+    location.replace(`../create-post.js`);
 
-   
+   // need to add deletePost
     postDetailContainer.append(postTitle, postCategory, postDescription, postContact);
     
 }
 // render and append this post's details to the container
 loadData();
 
-// // working on delete from 
+
   
