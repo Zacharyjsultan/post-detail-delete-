@@ -27,3 +27,7 @@ SET UP POST FOLDER
 ----give user option to delete the note and add comments
 
 ---update post it notes
+
+display post function -async 
+
+link in check auth

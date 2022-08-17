@@ -58,9 +58,15 @@ export async function createPost(post) {
 // DATA 
 export async function getPost(id) {
     // from the posts table, select a single post who has the matching id
-    const resp = await client.from('posts').select('*, category:categories(*)').match({ id }).single();
+    const response = await client.from('posts').select('*, category:categories(*)').match({ id }).single();
     
     
     // and return the response
-    return resp.data;
+    return response.data;
+}
+
+
+// delete ****************************************************
+export async function deletePost(id) {
+    return await client.from('posts').delete().match({ id });
 }

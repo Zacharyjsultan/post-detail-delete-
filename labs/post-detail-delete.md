@@ -1,4 +1,4 @@
-# Post Detail & Delete
+<!-- # Post Detail & Delete
 
 For this "feature ticket" assignment, you need to add a post detail page that shows detailed info about the posts, plus includes a delete button for the user than created the post to be able to delete.
 
@@ -21,7 +21,7 @@ Start by adding a new page at `/post`. Consider copying `/create-post` as the st
 
 Design out the HTML and CSS using static data in the `index.html`.
 
-Once your design is complete, move onto `post.js` and make your page "dynamic".
+Once your design is complete, move onto `post.js` and make your page "dynamic". -->
 
 ## Data ////////????
 
