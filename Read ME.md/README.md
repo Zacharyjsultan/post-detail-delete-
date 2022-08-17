@@ -16,12 +16,14 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 
 SET UP POST FOLDER
 
-on click of postit user should be redirected to new page
+---- on click of postit user should be redirected to new page
+    using same thing as adopt a dog
 
-    event listener within post-it notes render function
+----event listener within post-it notes render function
+    added render function for getPost
     
-    info to be continued on next page is TITLE, Date, text of note  - a render details function to render the existing info from the superbase
+----info to be continued on next page is TITLE, Date, text of note  - a render details function to render the existing info from the superbase
 
-    give user option to delete the note and add comments
+----give user option to delete the note and add comments
 
-    update post it notes
+---update post it notes

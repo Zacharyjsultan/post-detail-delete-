@@ -54,3 +54,13 @@ export async function getPosts() {
 export async function createPost(post) {
     return await client.from('posts').insert(post);
 }
+
+// DATA 
+export async function getPost(id) {
+    // from the posts table, select a single post who has the matching id
+    const resp = await client.from('posts').select('*, category:categories(*)').match({ id }).single();
+    
+    
+    // and return the response
+    return resp.data;
+}

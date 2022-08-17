@@ -1,3 +1,5 @@
+
+
 export function renderCategoryOptions(categories) {
     // document fragment is a "bag" for elements
     const fragment = document.createDocumentFragment();
@@ -34,10 +36,18 @@ export function renderPosts(posts) {
         const contactEl = document.createElement('p');
         contactEl.textContent = post.contact;
 
-        li.append(titleEl, categoryEl, descriptionEl, contactEl);
+
+        const a = document.createElement('a');
+
+        a.href = `./post-details/?id=${post.id}`;
+
+        a.append(titleEl, categoryEl, descriptionEl, contactEl);
+
+        li.append(a);
 
         fragment.append(li);
     }
 
     return fragment;
 }
+
