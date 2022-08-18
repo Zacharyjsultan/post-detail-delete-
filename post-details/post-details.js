@@ -28,21 +28,22 @@ async function loadData(){
     postContact.textContent = data.contact;
 
     const user = checkAuth();
-    
-    // if add delete function
 
-    if (user.id === post.user_id) {
-        const
+    const deleteButton = document.createElement('button');
+    console.log(deleteButton);
+    if (user.id === data.user_id) {
+        deleteButton.textContent = 'delete this';
+        deleteButton.addEventListener('click', async () => {
+            await deletePost(data.id);       
+            location.replace(`../`);
+            postDetailContainer.append(deleteButton);
+        });
     }
-     const deleteButton = document.createElement('button');
-    deleteButton.addEventListener('click', async () => {
-        await deletePost(post.id);
-    });
-    location.replace(`../create-post.js`);
 
-   // need to add deletePost
-    postDetailContainer.append(postTitle, postCategory, postDescription, postContact);
-    
+   // need to add deletePost///// I think i broke something here by pushing ) past append
+    postDetailContainer.append(postTitle, postCategory, postDescription, postContact, deleteButton);
+
+ 
 }
 // render and append this post's details to the container
 loadData();
