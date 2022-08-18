@@ -31,14 +31,14 @@ SET UP POST FOLDER
 display post function -async 
 
 link in check auth
-----------------------------------
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-----------------------------------
-----------------------------------
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-----------------------------------
+-POLICIES 
+
 - finalize css on first page 
 -dev branch profile-upsert-list
+----------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+----------------------------------
+
 
 =========USER UPDATE(ADD) PAGE=====
 html section to hold:
@@ -61,3 +61,5 @@ give auth for user
 render user prof into grid divs
 fetch from supabase 
 display thru js
+
+GIT COMMIT -m PROFILE UPSERT LIST
