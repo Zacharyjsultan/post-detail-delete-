@@ -31,3 +31,33 @@ SET UP POST FOLDER
 display post function -async 
 
 link in check auth
+----------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+----------------------------------
+----------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+----------------------------------
+- finalize css on first page 
+-dev branch profile-upsert-list
+
+=========USER UPDATE(ADD) PAGE=====
+html section to hold:
+name
+input for name
+input for biogra
+
+JS: 
+window
+async function create element
+event listener 
+
+update button
+needs to export to supabase
+give auth for user
+
+
+===============USER PROFILE PAGE========
+
+render user prof into grid divs
+fetch from supabase 
+display thru js
