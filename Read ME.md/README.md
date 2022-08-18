@@ -46,6 +46,8 @@ name
 input for name
 input for biogra
 
+add export in fetch for updating
+
 JS: 
 window
 async function create element

@@ -70,3 +70,8 @@ export async function getPost(id) {
 export async function deletePost(id) {
     return await client.from('posts').delete().match({ id });
 }
+
+// updating profiles UPSERRRT 
+export async function updateProfile(profile) {
+    return await client.from('profiles').upsert(profile).single();
+}
