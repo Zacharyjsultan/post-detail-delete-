@@ -38,10 +38,12 @@ link in check auth
 ----------------------------------
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 ----------------------------------
+GENERALly Needed
 
+links back to diff pages of html A hrefs
 
 =========USER UPDATE(ADD) PAGE=====
-html section to hold:
+html section to hold: make this a form it will be easier 
 name
 input for name
 input for biogra
