@@ -19,14 +19,19 @@
     <header>
         <a href="../">Community BB</a>
         <nav>
-            <a id="sign-out-link" href="auth">Sign out</a>
-            <a href="./users/users.html">Users</a>
+            <a href="create-post">Add Post</a>
+            <a id="sign-out-link" href="../auth">Sign out</a>
+            <a href="../users/users.html">Users</a>
         </nav>
     </header>
-    <main>
+    <main id="bulletin-board">
     <!--add a form for prof container-->
-        <form class="profile-form">
-            <h3>Name</h3>
+        <form class="prof-form">
+            <label for="prof-name" class="form-label">Name</label>
+            <input type="text" placeholder="'Your name'" class="form-input" name="prof-name">
+            <label for="prof-bio" class="form-label">Biography</label>
+            <textarea name="form-input" name="prof-bio" cols="32" rows="12"></textarea>
+
         </form>
     </main>
     <script type="module" src="./profiles.js"></script>
