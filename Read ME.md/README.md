@@ -56,6 +56,8 @@ async function create element
 event listener for form
 display profile to supa
 
+add all fetch from rubric
+
 update button
 needs to export to supabase
 give auth for user

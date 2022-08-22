@@ -71,13 +71,19 @@ export async function deletePost(id) {
 
 // export profile saves
 // retrieving profiles and by id
-export async function fetchProfiles() {
+export async function getProfiles() {
     const response = await client.from('profiles').select('*');
     return checkError(response);
 }
+
+export async function getProfile(id) {
+    const responseProfile = await client.from('profiles').select('*').match({ id }).single();
+
+    return responseProfile;
+}
 // 
 // updating profiles UPSERRRT 
-export async function updateProfile(profile) {
+export async function saveProfile(profile) {
     return await client.from('profiles').upsert(profile).single();
 }
 
