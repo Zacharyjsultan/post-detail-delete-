@@ -51,3 +51,4 @@ export function renderPosts(posts) {
     return fragment;
 }
 
+/// will need to create a function to render profile to profile

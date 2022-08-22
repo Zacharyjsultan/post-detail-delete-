@@ -65,17 +65,19 @@ export async function getPost(id) {
     return response.data;
 }
 
-
-// delete this is good right?****************************************************
 export async function deletePost(id) {
     return await client.from('posts').delete().match({ id });
 }
 
+// export profile saves
+// retrieving profiles and by id
+export async function fetchProfiles() {
+    const response = await client.from('profiles').select('*');
+    return checkError(response);
+}
+// 
 // updating profiles UPSERRRT 
 export async function updateProfile(profile) {
     return await client.from('profiles').upsert(profile).single();
 }
-// retrieving profiles by id
-export async function getProfile(id) {
-    return await client.from('profiles').match({ id }).single();
-}
+

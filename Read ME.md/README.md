@@ -53,7 +53,8 @@ add export in fetch for updating
 JS: 
 window
 async function create element
-event listener 
+event listener for form
+display profile to supa
 
 update button
 needs to export to supabase

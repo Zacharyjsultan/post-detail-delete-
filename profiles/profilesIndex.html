@@ -25,14 +25,20 @@
         </nav>
     </header>
     <main id="bulletin-board">
+        <div>
     <!--add a form for prof container-->
-        <form class="prof-form">
+        <form id="prof-form">
             <label for="prof-name" class="form-label">Name</label>
+
             <input type="text" placeholder="'Your name'" class="form-input" name="prof-name">
             <label for="prof-bio" class="form-label">Biography</label>
+
             <textarea name="form-input" name="prof-bio" cols="32" rows="12"></textarea>
 
+            <button class="form-button"name="prof-button">Update User Profile</button>
+        
         </form>
+    </div>
     </main>
     <script type="module" src="./profiles.js"></script>
 </body>
