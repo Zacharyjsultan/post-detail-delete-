@@ -1,4 +1,4 @@
-# Post Detail & Delete
+<!-- # Post Detail & Delete
 
 For this "feature ticket" assignment, you need to add a post detail page that shows detailed info about the posts, plus includes a delete button for the user than created the post to be able to delete.
 
@@ -15,15 +15,15 @@ Sketch out what the page will look like. On your diagram, identify:
 
 Take a screen shot and include in your repo
 
-## Page & UI
+## Page & UI/////////?????
 
 Start by adding a new page at `/post`. Consider copying `/create-post` as the starter, but make sure to change the css link and js script tag.
 
 Design out the HTML and CSS using static data in the `index.html`.
 
-Once your design is complete, move onto `post.js` and make your page "dynamic".
+Once your design is complete, move onto `post.js` and make your page "dynamic". -->
 
-## Data
+## Data ////////????
 
 Create and export new function from `fetch-utils.js` that fetches all of the post data for a single post id. Basically it will be the same as client use in `getPosts`, but will be limited to one id (use `.match` or `.eq`). As we are expecting a single row, add `.single()` to your query.
 

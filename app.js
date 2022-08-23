@@ -16,6 +16,7 @@ const bulletinBoard = document.getElementById('bulletin-board');
 
 async function displayPosts() {
     const posts = await getPosts();
+    console.log(posts);
     const listEls = renderPosts(posts);
     bulletinBoard.append(listEls);
 }
