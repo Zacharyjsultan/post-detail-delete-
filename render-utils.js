@@ -51,4 +51,19 @@ export function renderPosts(posts) {
     return fragment;
 }
 
-/// will need to create a function to render profile to profile
+/// will need to create a function to render users to profile
+export function renderUsers(profile) {
+    const div = document.createElement('div');
+    div.classList.add('profile');
+
+    const bioEl = document.createElement('p');
+    bioEl.textContent = `${profile.bio}`;
+    bioEl.classList.add('bio');
+
+    const nameEl = document.createElement('h3');
+    nameEl.textContent = `${profile.name}`;
+    nameEl.classList.add('name');
+
+    div.append(bioEl, nameEl);
+    return div;
+}
