@@ -1,77 +1,80 @@
-<!-- # Post Detail & Delete
+Profile Upsert & List
+For this “feature ticket” assignment, you need to add a profile update page and a list of user profiles page.
 
-For this "feature ticket" assignment, you need to add a post detail page that shows detailed info about the posts, plus includes a delete button for the user than created the post to be able to delete.
+Create a new branch from dev called profile-upsert-list
 
-Note that the comments feature will be added later this week to this page
+Planning
+Sketch out what each page will look like. On your diagram, identify:
 
-**Create a new branch from `dev` called `post-detail-delete`**
-
-## Planning
-
-Sketch out what the page will look like. On your diagram, identify:
-
--   What are the pieces of data required? (down to the field/column level)
--   What actions take place on the page? (usually means DOM events + page load)
-
+What are the pieces of data required? (down to the field/column level)
+What actions take place on the page? (usually means DOM events + page load)
 Take a screen shot and include in your repo
 
-## Page & UI/////////?????
+Page & UI
+These pages should be “protected”, meaning you need to be logged in to see them.
 
-Start by adding a new page at `/post`. Consider copying `/create-post` as the starter, but make sure to change the css link and js script tag.
+You can start on either page:
 
-Design out the HTML and CSS using static data in the `index.html`.
+page	navigation	purpose
+/users	Users	show all user profiles in a list format
+/profile	My Profile	edits the currently logged in user’s profile
+New Navigation
+Add new navigation options on other pages using the labels specified above:
 
-Once your design is complete, move onto `post.js` and make your page "dynamic". -->
+No nav on /auth page
+No self-link on pages (meaning /users should not have link for Users)
+Users
+Though the page is called “users” this is a display of data from the profiles table. If you start with this page, put some data in the table when needed, but be aware that the user id’s need to match signed up users. See below for schema and policy info for this table.
 
-## Data ////////????
+Profile
+A form for the user to add or edit their profile.
 
-Create and export new function from `fetch-utils.js` that fetches all of the post data for a single post id. Basically it will be the same as client use in `getPosts`, but will be limited to one id (use `.match` or `.eq`). As we are expecting a single row, add `.single()` to your query.
+Since we know a user can have one and only one profile row, we can use supabase upsert to either insert or update the row. Because of our policy and row default value for that tables id column, we don’t have to explicitly add a WHERE criteria (eq or match)
 
+Data
+Create and export new functions from fetch-utils.js:
+
+function	purpose
+getProfiles	get all rows from the profiles table
+getProfile	get a single profile row by user.id (for the profile page, pass in the currently logged in user id). This data is used to prepopulate the form if it exists.
+saveProfiles	save using an upsert which will insert or update for the current user.
+Database
+Schema
+Notice that the id column is linked to the users.id table and column, and that it defaults to uid(), meaning the calling users id.
+
+profile schema
+
+Add a policy for insert and update.
+
+setting	value
+policy name	Enable insert for users based on user_id
+operation	INSERT
+target roles	authenticated
+WITH	auth.uid() = id
+setting	value
+policy name	Enable update for users based on user_id
+operation	UPDATE
+target roles	authenticated
+USING	auth.uid() = id
+WITH	auth.uid() = id
+setting	value
+policy name	Enable select for authenticated users
+operation	SELECT
+target roles	authenticated
+USING	true
+Integration
 For knowing who the current user is, you can capture the user from the auth check:
 
-```js
 const user = checkAuth();
-```
-
-Start by creating a `displayPost` async function and simply calling the imported data function and logging the post plus the user object. If these are working correctly, you know you have the right data to work with.
-
-## Display
-
-Grab your needed DOM elements and begin to modify the display based on the values in the post detail and the user object. **Only show the delete button and subscribe to click event if the post belongs to the current user!**
-
-## Links
-
-Add links to the home page to each post to make the header linked to the corresponding detail page
-
-## Delete Post
-
-### Database
-
-Add a policy for delete.
-
-| setting      | value                                    |
-| ------------ | ---------------------------------------- |
-| policy name  | Enable delete for users based on user_id |
-| operation    | DELETE                                   |
-| target roles | authenticated                            |
-| USING        | auth.uid() = user_id                     |
-
-### Fetch Function
-
-Create and export new function from `fetch-utils.js` that deletes a post (by post id). Import and use this function on the delete button click, and navigate back to the home page (`../` when complete).
-
-## Rubric
-
+Rubric
 The following is required for your assignment to be graded:
 
--   PR open from `post-detail-delete` to `dev`
--   PR Passes CI (lint)
--   PR preview on netlify
-
-| Commit with...                        |  20 |
-| :------------------------------------ | --: |
-| Planning artifacts                    |   2 |
-| Post Detail UI (w/static data)        |   4 |
-| Post Detail from dynamic data         |   5 |
-| Link Posts to Detail Page             |   3 |
-| Delete post for creator functionality |   6 |
+PR open from profile-upsert-list to dev
+PR Passes CI (lint)
+PR preview on netlify
+Commit with…	20
+Planning artifacts	2
+Create Profile functionality	6
+Update Profile functionality	4
+Display all users	6
+New Navigation	2

@@ -1,0 +1,15 @@
+main {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+h2 {
+display: grid;
+height: 100px;
+width: 100px;
+
+}
+
+p {
+
+}
