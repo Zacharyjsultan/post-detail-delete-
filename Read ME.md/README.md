@@ -31,3 +31,42 @@ SET UP POST FOLDER
 display post function -async 
 
 link in check auth
+-POLICIES 
+
+- finalize css on first page 
+-dev branch profile-upsert-list
+----------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+----------------------------------
+GENERALly Needed
+
+links back to diff pages of html A hrefs
+
+=========USER UPDATE(ADD) PAGE=====
+html section to hold: make this a form it will be easier 
+name
+input for name
+input for biogra
+
+add export in fetch for updating
+
+JS: 
+window
+async function create element
+event listener for form
+display profile to supa
+
+add all fetch from rubric
+
+update button
+needs to export to supabase
+give auth for user
+
+
+===============USER PROFILE PAGE========
+
+render user prof into grid divs
+fetch from supabase 
+display thru js
+
+GIT COMMIT -m PROFILE UPSERT LIST
